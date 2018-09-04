@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>.ics/.ical Generator</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="container">
+	<section id="create-appointment">
+		<form name="create-appointment" id="create-appointment">
+			<fieldset>
+				<legend><strong>Organisator</strong></legend>
+				<div class="form-group">
+					<input type="text" name="organizerVorname" placeholder="Vorname" />
+					<input type="text" name="organizerName" placeholder="Nachname" />
+					<input type="email" name="organizerEmail" placeholder="E-Mail-Adresse" />
+					<input type="text" name="organizerOrganisation" placeholder="Firma" />
+			</div>
+			</fieldset>
+			<fieldset>
+				<legend><strong>Termin</strong></legend>
+				<div class="form-group">
+					<input type="text" name="title" placeholder="Terminname" />
+					<select name="privacy">
+						<option value="privat">privat</option>
+						<option value="public">öffentlich</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<textarea name="summary" placeholder="Zusammenfassung"></textarea>
+					<textarea name="description" placeholder="Beschreibung"></textarea>
+				</div>
+				<div class="form-group">
+					<strong>Terminbeginn:</strong>
+					<input type="date" name="date-start" />
+					<input type="time" name="time-start" />
+				</div>
+				<div class="form-group">
+					<strong>Terminende:</strong>
+					<input type="date" name="date-end" />
+					<input type="time" name="time-end" />
+				</div>
+				<div class="form-group">
+					<input type="text" name="location" placeholder="Ort" />
+				</div>
+				<div class="form-group">
+					<select name="method">
+						<option value="publish" disabled selected>Wählen Sie aus, wie der Termin behandelt werden soll</option>
+						<option value="publish">Nur ansehen</option>
+						<option value="request">Benutzer mit diesem Termin können teilnehmen</option>
+					</select>		
+				</div>
+				<div class="form-group">
+					<input type="url" name="url" placeholder="URL" />
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend><strong>Teilnehmer</strong></legend>
+				<div class="form-group">
+					<input type="text" name="attendeeVorname" placeholder="Vorname" />
+					<input type="text" name="attendeeName" placeholder="Nachname" />
+					<input type="email" name="attendeeEmail" placeholder="E-Mail-Adresse" />
+					<input type="text" name="attendeeOrganisation" placeholder="Firma" />
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend><strong>Erinnerung</strong></legend>
+				<div class="form-group">
+					<select name="alarm">
+						<option value="none">Keine</option>
+						<option value="PT0M">Bei Ereignisstart</option>
+						<option value="-PT05M">5 Minuten vorher</option>
+						<option value="-PT10M">10 Minuten vorher</option>
+						<option value="-PT15M">15 Minuten vorher</option>
+						<option value="-PT30M">30 Minuten vorher</option>
+						<option value="-PT60M">1 Stunde vorher</option>
+						<option value="-PT120M">2 Stunden vorher</option>
+						<option value="-PT720M">1 Tag vorher</option>
+						<option value="-PT1440M">2 Tage vorher</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend><strong>Wiederholung</strong></legend>
+				<div class="form-group">
+					<select name="recurring">
+						<option value="none">Keine</option>
+						<option value="DAYLY">Täglich</option>
+						<option value="WEEKLY">Wöchentlich</option>
+						<option value="MONTHLY">Monatlich</option>
+						<option value="YEARLY">Jährlich</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<strong>Wiederholungen: </strong><input type="number" name="interval" />
+				</div>
+				
+				<div class="form-group">
+					<select name="every-day">
+						<option value="none" disabled selected>Keiner</option>
+						<option value="MO">Jeden Montag</option>
+						<option value="TU">Jeden Dienstag</option>
+						<option value="WE">Jeden Mittwoch</option>
+						<option value="TH">Jeden Donnerstag</option>
+						<option value="FR">Jeden Freitag</option>
+						<option value="SA">Jeden Samstag</option>
+						<option value="SU">Jeden Sonntag</option>
+					</select>
+					<select name="every-week">
+						<option value="none" disabled selected>Keiner</option>
+						<option value="1">Jeden Montag</option>
+						<option value="2">Jeden Dienstag</option>
+						<option value="3">Jeden Mittwoch</option>
+						<option value="4">Jeden Donnerstag</option>
+						<option value="5">Jeden Freitag</option>
+						<option value="6">Jeden Samstag</option>
+						<option value="7">Jeden Sonntag</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend><strong>Optionen</strong></legend>
+				<div class="form-group">
+					<button data-button-type="submit">Termin erstellen</button>
+				</div>
+			</fieldset>
+		</form>
+		</section>
+	<section>
+		<textarea name="ics" style="float:right;"></textarea>
+	</section>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
